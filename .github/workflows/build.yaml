@@ -1,0 +1,57 @@
+name: ci
+
+on:
+  push:
+    branches: main
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Build and push alert server
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: alert-server.Dockerfile
+          push: true
+          tags: ghcr.io/bgdsh/dolphinscheduler-alert-server:3.0.0-beta-1
+      -
+        name: Build and push api
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: api.Dockerfile
+          push: true
+          tags: ghcr.io/bgdsh/dolphinscheduler-api:3.0.0-beta-1
+      -
+        name: Build and push master
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: master.Dockerfile
+          push: true
+          tags: ghcr.io/bgdsh/dolphinscheduler-master:3.0.0-beta-1
+      -
+        name: Build and push tools
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: tools.Dockerfile
+          push: true
+          tags: ghcr.io/bgdsh/dolphinscheduler-tools:3.0.0-beta-1
+      -
+        name: Build and push worker
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: worker.Dockerfile
+          push: true
+          tags: ghcr.io/bgdsh/dolphinscheduler-worker:3.0.0-beta-1       
