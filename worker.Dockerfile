@@ -4,3 +4,7 @@ RUN curl -O \
 RUN mkdir /opt/dolphinscheduler/lib
 RUN mv mysql-connector-java-8.0.16.jar /opt/dolphinscheduler/lib/
 RUN ls -al /opt/dolphinscheduler/lib
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3 python3-pip && \
+    rm -rf /var/lib/apt/lists/*
