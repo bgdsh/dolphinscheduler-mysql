@@ -7,6 +7,25 @@ RUN ls -al /opt/dolphinscheduler/libs
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3 python3-pip && \
     rm -rf /var/lib/apt/lists/*
+
+# install miniconda to /root/miniconda3/
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && sh ./Miniconda3-latest-Linux-x86_64.sh -b
 
 COPY common.properties /opt/dolphinscheduler/conf
+
+RUN apt-get update
+RUN apt-get install sudo -y
+
+# add some special sudoers
+RUN adduser --disabled-password --gecos '' dw
+RUN adduser dw sudo
+
+RUN adduser --disabled-password --gecos '' devops
+RUN adduser devops sudo
+
+RUN adduser --disabled-password --gecos '' spider
+RUN adduser spider sudo
+
+# disable password
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN rm -rf /var/lib/apt/lists/*
