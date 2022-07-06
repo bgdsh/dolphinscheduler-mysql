@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 # install miniconda to /miniconda3/
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && sh ./Miniconda3-latest-Linux-x86_64.sh -b
-RUN mv miniconda3 /
+RUN mv /root/miniconda3 /
 
 COPY common.properties /opt/dolphinscheduler/conf
 
