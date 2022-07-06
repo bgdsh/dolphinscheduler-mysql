@@ -11,6 +11,8 @@ RUN apt-get update && \
 # install miniconda to /root/miniconda3/
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && sh ./Miniconda3-latest-Linux-x86_64.sh -b
 
+RUN mv miniconda3 /
+
 COPY common.properties /opt/dolphinscheduler/conf
 
 RUN apt-get update
@@ -30,4 +32,4 @@ RUN adduser spider sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN rm -rf /var/lib/apt/lists/*
 RUN ln /root/miniconda3/bin/conda /usr/local/bin/conda
-RUN chown -R root:sudo /root/miniconda3
+RUN chown -R root:sudo /miniconda3
