@@ -30,3 +30,4 @@ RUN adduser spider sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN rm -rf /var/lib/apt/lists/*
 RUN ln /root/miniconda3/bin/conda /usr/local/bin/conda
+RUN chown -R root:sudo /root/miniconda3
