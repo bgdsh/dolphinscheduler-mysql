@@ -1,4 +1,4 @@
-FROM apache/dolphinscheduler-tools:3.0.0-beta-1
+FROM apache/dolphinscheduler-tools:2.0.5
 RUN curl -O \
     "https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar"
 # follow the official doc
