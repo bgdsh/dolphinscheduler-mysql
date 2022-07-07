@@ -5,8 +5,8 @@ RUN apt-get update && \
 
 RUN curl -O \
     "https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar"
-RUN mv mysql-connector-java-8.0.16.jar /opt/dolphinscheduler/libs/
-RUN ls -al /opt/dolphinscheduler/libs
+RUN mv mysql-connector-java-8.0.16.jar /opt/dolphinscheduler/lib/
+RUN ls -al /opt/dolphinscheduler/lib
 
 
 # install miniconda to /miniconda3/
