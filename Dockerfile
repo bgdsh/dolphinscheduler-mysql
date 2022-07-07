@@ -12,7 +12,7 @@ RUN apt-get update && \
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && sh ./Miniconda3-latest-Linux-x86_64.sh -b
 RUN mv /root/miniconda3 /
 
-COPY common.properties /opt/dolphinscheduler/conf
+# COPY common.properties /opt/dolphinscheduler/conf
 
 RUN apt-get update
 RUN apt-get install sudo -y
