@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    branches: main
+    branches: 3.0
 
 jobs:
   login:
