@@ -19,7 +19,7 @@ jobs:
         name: Build and push alert server
         uses: docker/build-push-action@v3
         with:
-          file: alert-server.Dockerfile
+          file: Dockerfile
           push: true
           tags: ghcr.io/bgdsh/dolphinscheduler:2.0.5
      
