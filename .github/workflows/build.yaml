@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    branches: v3.0
+    branches: v2.0
 
 jobs:
   login:
@@ -21,32 +21,5 @@ jobs:
         with:
           file: alert-server.Dockerfile
           push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler-alert-server:3.0.0-beta-1
-      -
-        name: Build and push api
-        uses: docker/build-push-action@v3
-        with:
-          file: api.Dockerfile
-          push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler-api:3.0.0-beta-1
-      -
-        name: Build and push master
-        uses: docker/build-push-action@v3
-        with:
-          file: master.Dockerfile
-          push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler-master:3.0.0-beta-1
-      -
-        name: Build and push tools
-        uses: docker/build-push-action@v3
-        with:
-          file: tools.Dockerfile
-          push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler-tools:3.0.0-beta-1
-      -
-        name: Build and push worker
-        uses: docker/build-push-action@v3
-        with:
-          file: worker.Dockerfile
-          push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler-worker:3.0.0-beta-1       
+          tags: ghcr.io/bgdsh/dolphinscheduler:2.0.5
+     
