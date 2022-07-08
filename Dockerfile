@@ -33,3 +33,5 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN rm -rf /var/lib/apt/lists/*
 RUN ln /miniconda3/bin/conda /usr/local/bin/conda
 RUN chown -R root:sudo /miniconda3
+RUN rm /usr/bin/python
+RUN ln /miniconda3/bin/python /usr/bin/python
