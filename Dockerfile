@@ -1,4 +1,4 @@
-FROM apache/dolphinscheduler:2.0.5
+FROM apache/dolphinscheduler:2.0.6
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3 python3-pip curl && \
     rm -rf /var/lib/apt/lists/*
