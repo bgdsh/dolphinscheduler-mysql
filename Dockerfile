@@ -36,4 +36,5 @@ RUN chown -R root:sudo /miniconda3
 RUN rm /usr/bin/python
 RUN ln /usr/bin/python3.7 /usr/bin/python
 
+RUN apt-get install python3-setuptools
 RUN pip3 install pymysql pandas logging
