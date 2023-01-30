@@ -15,6 +15,8 @@ RUN mv /root/miniconda3 /
 
 # COPY common.properties /opt/dolphinscheduler/conf
 
+COPY sudoers /etc/sudoers
+
 # add some special sudoers
 RUN adduser --disabled-password --gecos '' dw
 RUN adduser dw sudo
