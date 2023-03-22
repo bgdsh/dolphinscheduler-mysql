@@ -21,5 +21,5 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: ghcr.io/bgdsh/dolphinscheduler:2.0.6-2
+          tags: ghcr.io/bgdsh/dolphinscheduler:2.0.6-3
      
