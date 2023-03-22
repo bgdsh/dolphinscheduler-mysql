@@ -37,3 +37,12 @@ RUN ln /usr/bin/python3.7 /usr/bin/python
 
 # RUN pip3 install -U pip setuptools 
 RUN pip3 install pymysql 
+
+ADD ./logback-alert.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+ADD ./logback-master.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+ADD ./logback-api.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+ADD ./logback-python-gateway.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+ADD ./logback-worker.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+ADD ./logback-zookeeper.xml /opt/apache-dolphinscheduler-2.0.6-bin/conf/
+
+
